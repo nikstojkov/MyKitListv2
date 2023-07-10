@@ -1,5 +1,18 @@
 # README
 
+This is the kit organisation tool, being built for some friends.
+
+Sit-rep...
+
+Rails new, ESBuild for JS bundling, boostrap CSS, Devise for Auth
+
+TODO: 
+
+Implement mongoDB/Mongoid
+RCV's for item models, 
+Implement Datatables
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
