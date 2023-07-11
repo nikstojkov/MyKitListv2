@@ -1,7 +1,5 @@
 <h1>TABLE TEST</h1>
-<div id="example-table">
-  <p>there should be table here</p>
-</div>
+<div id="example-table"></div>
 <script>
   //define some sample data
    var tabledata = [
@@ -26,7 +24,7 @@
   });
 
   // //trigger an alert message when the row is clicked
-  // table.on("rowClick", function(e, row){
-  // 	alert("Row " + row.getData().id + " Clicked!!!!");
-  // });
+  table.on("rowClick", function(e, row){
+  	alert("Row " + row.getData().id + " Clicked!!!!");
+  });
 </script>
