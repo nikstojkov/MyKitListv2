@@ -2,6 +2,7 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 // @import "tabulator-tables";
 @import 'jquery-ui';
+// @import 'tabulator_bootstrap5'
 
 
 body {
@@ -12,4 +13,9 @@ body {
   body {
     padding-top: 50px;
   }
+}
+
+.tabulator-row .tabulator-cell {
+  padding: 4px;
+  vertical-align: -webkit-baseline-middle;
 }
