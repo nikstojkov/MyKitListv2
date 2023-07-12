@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'home#index'
   get 'tab_test/index'
+  get 'tab_test/table_data'
 end
