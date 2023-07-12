@@ -43,12 +43,13 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 
 
-### NEW GEMS ###
+### USER GEMS ###
 
 gem "cssbundling-rails", "~> 1.2"
-
 gem "devise", "~> 4.9" # Authentication
+gem "simple_form", "~> 5.2" # Forms
 
+### END USER GEMS ###
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
