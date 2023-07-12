@@ -50,6 +50,7 @@ gem "devise", "~> 4.9" # Authentication
 gem "simple_form", "~> 5.2" # Forms
 gem "mongo", "~> 2" # MongoDB
 gem 'mongoid', '~> 8.1.1' # MongoDB
+gem "faker", "~> 3.2"
 
 ### END USER GEMS ###
 
