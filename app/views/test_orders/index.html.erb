@@ -5,12 +5,14 @@
   </nav>
 </div>
 <div class="container">
-  <div class="container">
-    <div id="custom-pagination" class="d-flex justify-content-end"></div>
+  <div id="table-top" class="container d-flex">
+    <div class="d-inline">
+      <label for="fSearch">Search</label>
+      <input type="text" id="fSearch" name="fSearch">
+    </div>
+    <div id="custom-pagination" class="align-content-end d-inline"></div>
   </div>
   <div class="container" style="height: 1000px;">
-    <label for="fSearch">Search</label>
-    <input type="text" id="fSearch" name="fSearch">
     <div id="orders-table" class="h-75"></div>
   </div>
 </div>
@@ -47,24 +49,21 @@
   const input = document.getElementById("fSearch");
   input.addEventListener("keyup", function() {
     orders_table.setFilter(matchAny, { value: input.value });
-    if (input.value == " ") {
-        orders_table.clearFilter()
+
+    if (input.value === "") {
+        orders_table.clearFilter();
     }
   });
 
   function matchAny(data, filterParams) {
-      //data - the data for the row being filtered
-      //filterParams - params object passed to the filter
-      //RegExp - modifier "i" - case insensitve
+    const regex = new RegExp(filterParams.value);
 
-    var match = false;
-    const regex = RegExp(filterParams.value, 'i');
-
-    for (var key in data) {
-        if (regex.test(data[key]) == true) {
-            match = true;
+    for (const key in data) {
+        if (regex.test(data[key])) {
+            return true;
         }
     }
-    return match;
+
+    return false;
   }
 </script>
