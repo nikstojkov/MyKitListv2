@@ -2,3 +2,14 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 // @import "tabulator-tables";
 @import 'jquery-ui';
+
+
+body {
+  padding-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 50px;
+  }
+}
