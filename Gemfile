@@ -48,6 +48,7 @@ gem "bootsnap", require: false
 gem "cssbundling-rails", "~> 1.2"
 gem "devise", "~> 4.9" # Authentication
 gem "simple_form", "~> 5.2" # Forms
+gem "mongo", "~> 2" # MongoDB
 gem 'mongoid', '~> 8.1.1' # MongoDB
 
 ### END USER GEMS ###
