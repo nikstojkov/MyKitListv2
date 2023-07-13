@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'test_orders#index'
+  root 'item#index'
   resources :test_orders do
     get 'table_data', on: :collection
   end

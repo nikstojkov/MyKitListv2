@@ -1,0 +1,16 @@
+<h1 class="display-2"> This is datatales </h1>
+<table id="example" class="display" style="width:100%">
+  <thead>
+    <tr>
+      <% @orders.as_json[0].each do |key, value| %>
+        <th> <%= key %> </th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>boop</td>
+    </tr>
+  </tbody>
+</table>
+<script></script>
