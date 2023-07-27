@@ -1,4 +1,3 @@
-import jquery from 'jquery'
-
-window.jQuery = jquery
+import jquery from "jquery"
 window.$ = jquery
+window.jQuery = jquery

@@ -2,9 +2,9 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import * as bootstrap from "bootstrap"
-import "./src/jquery"
-import './src/jquery-ui'
 import './custom/test'
+// import "./src/jquery"
+// import './src/jquery-ui'
 
 
 //add Tabulator and bootstrap to the global

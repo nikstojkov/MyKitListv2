@@ -1,0 +1,28 @@
+<script>
+  // data source for orders table
+  var dataSource = '/test_orders/table_data';
+  // tabulator order_table table with below fields as columns
+  var orders_table = new Tabulator("#orders-table", {
+    height:"100%", // set height of table (optional)
+    layout:"fitDataTable", //fit columns to width of table (optional)
+    data:dataSource,
+    pagination: false,
+    responsiveLayout:true,
+    autoColumns:true,
+    autoColumnsDefinitions:function(definitions){
+        //definitions - array of column definition objects
+
+        definitions.forEach((column) => {
+            column.editor = true; // add header filter to every column
+        });
+
+        return definitions;
+
+    },
+    autoColumnsDefinitions:[
+      {field:"_id", visible:false},
+        {field:"created_at", visible:false},
+        {field:"updated_at", visible:false},
+    ]
+  });
+</script>
