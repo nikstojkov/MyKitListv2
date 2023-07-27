@@ -1,5 +1,12 @@
+// BOOTSTRAP OVERIDES //
+
+// $h1-font-size: 1rem;
+// $h2-font-size: 1rem;
+
+// Import Bootstrap's Sass files
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
 // @import "tabulator-tables";
 @import 'jquery-ui';
 

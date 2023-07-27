@@ -1,16 +1,42 @@
 <h1 class="display-2"> This is datatales </h1>
-<table id="example" class="display" style="width:100%">
-  <thead>
-    <tr>
-      <% @orders.as_json[0].each do |key, value| %>
-        <th> <%= key %> </th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>boop</td>
-    </tr>
-  </tbody>
-</table>
-<script></script>
+<button id="run_query">
+  Run Query
+</button>
+<br>
+<div id="query_output">
+  <p>
+    QUERY OUTPUT
+  </p>
+</div>
+<script>
+  var dataSource = '/item/table_data'
+    $(function () {
+
+        /* user  run query click event*/
+        $('#run_query').click(function () {
+            populateDataTable(dataSource);
+        });
+
+        function populateDataTable(json_obj) {
+            console.log(json_obj)
+            /*extract fields from ajax return*/
+            var keys = Object.keys(json_obj[0]);
+            var columns_obj = [];
+            $.each(keys, function (i, it) {
+                columns_obj[i] = { data: it, title: it };
+            });
+
+
+            /*draw html table container*/
+            var html_table = '<table id="example" class="display" width="100%" cellspacing="0"><thead></thead><tbody></tbody></table>';
+
+            $('#query_output').html(html_table);
+
+            $('#query_output table').DataTable({
+                data: json_obj,
+                columns: columns_obj
+            });
+        }
+    });
+  var item_table = new DataTable('#example');
+</script>

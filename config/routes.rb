@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  root 'item#index'
+  root 'test_orders#index'
   resources :test_orders do
+    get 'table_data', on: :collection
+  end
+  resources :item do
     get 'table_data', on: :collection
   end
   devise_for :users
