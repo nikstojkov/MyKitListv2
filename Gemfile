@@ -3,8 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
-# CSV parser library
-gem 'csv'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.6"
@@ -54,12 +52,24 @@ gem "simple_form", "~> 5.2" # Forms
 gem "mongo", "~> 2" # MongoDB
 gem 'mongoid', '~> 8.1.1' # MongoDB
 gem "faker", "~> 3.2"
+# CSV parser library
+gem 'csv'
 
 ### END USER GEMS ###
+
+group :test do
+  # Adds support for Capybara system testing and selenium driver
+  gem 'rspec-rails'
+end
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'byebug', platform: :mri
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :development do
