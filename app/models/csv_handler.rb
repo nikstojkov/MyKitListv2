@@ -9,9 +9,8 @@ class CsvHandler
 
   def self.import(file)
     CSV.foreach(file, headers: true) do |row|
-      # p row.fields
-      # null?(row) ? next : Item.create!(row.to_hash)
-      check_fields(row)
+      p row
+      CSVCheck.run_checks(row)
     end
   end
 
@@ -20,7 +19,3 @@ class CsvHandler
   # end
 
 end
-
-# row.null? ? next : Item.create!(row.to_hash)
-# next if row.null?
-# Item.create! row.to_hash
