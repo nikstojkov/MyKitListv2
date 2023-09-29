@@ -1,8 +1,9 @@
 class Item
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Attributes::Dynamic
 
-  field :model, type: String
+
 
   belongs_to :user, optional: true
 end
