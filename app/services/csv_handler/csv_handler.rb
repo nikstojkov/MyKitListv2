@@ -1,11 +1,17 @@
 require "csv"
 
-csv_one = "app/services/csv_handler/TEST_DATA/Kit List 08_18 - Sheet1.csv"
-csv_two = "app/services/csv_handler/TEST_DATA/Kit List 08_18 - Sheet2.csv"
+class CSVHandler
+  csv_one = "app/services/csv_handler/TEST_DATA/Kit List 08_18 - Sheet1.csv"
+  csv_two = "app/services/csv_handler/TEST_DATA/Kit List 08_18 - Sheet2.csv"
 
-CSV.foreach("app/services/csv_handler/TEST_DATA/Kit List 08_18 - Sheet1.csv") do |row|
-  # puts row.parse(string)
+  def initialize(csv_one, csv_two)
+    @csv_one = csv_one
+    @csv_two = csv_two
+  end
+
+  def parse
+    CSV.foreach(@csv_one) do |row|
+      puts row
+    end
+  end
 end
-
-p CSV.read(csv_one)[0]
-p CSV.read(csv_two)[0]
