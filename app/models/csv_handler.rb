@@ -1,4 +1,5 @@
 require 'csv'
+require_relative '../services/csv_check.rb'
 
 class CsvHandler
   include Mongoid::Document
@@ -9,12 +10,13 @@ class CsvHandler
   def self.import(file)
     CSV.foreach(file, headers: true) do |row|
       # p row.fields
-      row.fields.all?(&:blank?) ? next : Item.create!(row.to_hash)
+      # null?(row) ? next : Item.create!(row.to_hash)
+      check_fields(row)
     end
   end
 
-  # def null?
-  #   attributes.values.all?(&:blank?)
+  # def null?(row)
+  #   row.fields.all?(&:blank?)
   # end
 
 end
