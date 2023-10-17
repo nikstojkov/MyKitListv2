@@ -7,10 +7,17 @@ class CsvHandler
 
   # callback function to check if all fields are null
 
+
+
   def self.import(file)
     CSV.foreach(file, headers: true) do |row|
       p row
       CSVCheck.run_checks(row)
+      if CSVCheck.run_checks.blank_row?(row)
+        p 'BLANK FRIGGIN ROW'
+      else
+        Item.create!(row.to_hash)
+      end
     end
   end
 
